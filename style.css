@@ -1,0 +1,113 @@
+
+    :root{
+      --bd-name: "Arunima";
+      --from-name: "From, Abhishek";
+      --accent-1: #ff7ab6;
+      --accent-2: #7aafff;
+      --accent-3: #ffd36e;
+      --bg-1: #fff7fb;
+      --bg-2: #ff66d6;
+      --ink: #1d1d1f;
+      --muted: #5f6368;
+      --card: #ffffffcc;
+      --radius: 24px;
+      --shadow: 0 10px 30px rgba(0,0,0,.08);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: 'Poppins', sans-serif;
+      color:var(--ink);
+      background: linear-gradient(120deg, var(--bg-1), var(--bg-2));
+      overflow-x:hidden;
+    }
+
+    .container{width:min(1100px, 92%); margin-inline:auto}
+    .btn{
+      display:inline-block; padding:.9rem 1.2rem; border-radius:999px;
+      background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+      color:#fff; text-decoration:none; font-weight:700;
+      box-shadow: var(--shadow);
+    }
+
+    header.hero{
+      position:relative; padding:100px 0 60px; text-align:center;
+    }
+
+    .title{
+      font-family:'Pacifico', cursive; font-size: clamp(42px, 7vw, 82px);
+      margin:0;
+      background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+      -webkit-background-clip: text; background-clip:text; color: transparent;
+    }
+    .subtitle{ margin:.6rem auto 1.2rem; max-width:55ch; color:var(--muted); font-size:clamp(16px,2.5vw,18px) }
+
+    .name-badge{
+      display:inline-flex; align-items:center; gap:.6rem; padding:.5rem .9rem;
+      background:#fff; border-radius:999px; box-shadow: var(--shadow); font-weight:600;
+    }
+    .name-dot{ width:10px; height:10px; border-radius:50%; background:var(--accent-1); display:inline-block }
+
+    /* ===== Balloons Fix ===== */
+    .balloons{ position:absolute; inset:0; overflow:hidden; pointer-events:none; }
+    .balloon{
+      position:absolute;
+      bottom:-150px;
+      width:60px; height:80px;
+      border-radius:50% 50% 45% 45%;
+      background:var(--accent-1);
+      box-shadow: inset -4px -8px 10px rgba(0,0,0,0.15);
+      animation: floatUp var(--dur) ease-in infinite;
+    }
+    .balloon:after{
+      content:"";
+      position:absolute;
+      bottom:-40px; left:50%;
+      width:2px; height:40px;
+      background:#444;
+      transform:translateX(-50%);
+    }
+    .balloon:before{
+      content:"";
+      position:absolute;
+      bottom:-10px; left:50%;
+      width:12px; height:10px;
+      background:inherit;
+      border-radius:2px;
+      transform:translateX(-50%);
+    }
+
+    @keyframes floatUp{
+      0%{ transform: translateY(0) }
+      100%{ transform: translateY(-120vh) }
+    }
+
+    .card{
+      background: var(--card);
+      border-radius: var(--radius);
+      padding:28px;
+      box-shadow: var(--shadow);
+    }
+    .grid{ display:grid; gap:22px }
+    @media(min-width:880px){ .grid{ grid-template-columns: 1.1fr .9fr } }
+
+    .note h3{ margin:.4rem 0 1rem; font-size:clamp(22px,3vw,28px) }
+    .note p{ margin:.6rem 0; color:#2b2b2b; line-height:1.7 }
+
+    .collage{ display:grid; grid-template-columns:repeat(6,1fr); grid-auto-rows: 110px; gap:10px }
+    .collage .ph{ border-radius:16px; overflow:hidden; box-shadow: var(--shadow) }
+    .collage img{ width:100%; height:100%; object-fit:cover; }
+    .ph.tall{ grid-row: span 2 }
+    .ph.wide{ grid-column: span 2 }
+    .ph.big{ grid-column: span 3; grid-row: span 2 }
+
+    .wishes{ display:grid; gap:16px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-top:18px }
+    .wish{ background: #fff; border-radius:18px; padding:18px; box-shadow: var(--shadow) }
+    .wish h4{ margin:.2rem 0 .4rem; font-size:18px }
+    .wish p{ margin:0; color:var(--muted) }
+
+    .type { display:inline-block; border-right: 2px solid currentColor; white-space:nowrap; overflow:hidden; animation: typing 4.2s steps(40,end) 1 both, caret 700ms step-end infinite; }
+    @keyframes typing { from{ width:0 } to{ width:100% } }
+    @keyframes caret { 50%{ border-color: transparent } }
