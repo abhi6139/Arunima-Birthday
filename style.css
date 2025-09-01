@@ -112,3 +112,55 @@
     @keyframes typing { from{ width:0 } to{ width:100% } }
     @keyframes caret { 50%{ border-color: transparent } }
 
+
+    /* Password overlay styling */
+    #password-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: #ffefff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      z-index: 9999;
+      font-family: 'Poppins', sans-serif;
+    }
+    #password-box {
+      background: white;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      text-align: center;
+      max-width: 300px;
+      width: 100%;
+    }
+    #password-box h2 {
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+    #password-input {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+    #password-btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      background: #ff69b4;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    #password-btn:hover {
+      background: #ff3385;
+    }
+    #error-msg {
+      color: red;
+      margin-top: 10px;
+      display: none;
+    }
