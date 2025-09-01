@@ -42,7 +42,7 @@
       background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
       -webkit-background-clip: text; background-clip:text; color: transparent;
     }
-    .subtitle{ margin:.6rem auto 1.2rem; max-width:55ch; color:var(--muted); font-size:clamp(16px,2.5vw,18px) }
+    .subtitle{ margin:.6rem auto 1.2rem; max-width:26ch; color:var(--muted); font-size:clamp(16px,2.5vw,18px) }
 
     .name-badge{
       display:inline-flex; align-items:center; gap:.6rem; padding:.5rem .9rem;
@@ -111,3 +111,4 @@
     .type { display:inline-block; border-right: 2px solid currentColor; white-space:nowrap; overflow:hidden; animation: typing 4.2s steps(40,end) 1 both, caret 700ms step-end infinite; }
     @keyframes typing { from{ width:0 } to{ width:100% } }
     @keyframes caret { 50%{ border-color: transparent } }
+
