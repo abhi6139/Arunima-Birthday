@@ -29,6 +29,7 @@ body {
 
 /* Main card centered */
 .card.note {
+  font-size: 16px;
   background: #fff;
   border-radius: 20px;
   padding: 30px;
@@ -81,8 +82,8 @@ body {
 }
 @media (max-width: 600px) {
         .back-btn {
-          padding: 5px 10px;   /* half padding */
-          font-size: 10px;     /* smaller text */
+          padding: 8px 13px;   /* half padding */
+          font-size: 12px;     /* smaller text */
         }
         .wishes{
           flex-wrap: wrap;
@@ -96,25 +97,30 @@ body {
       margin-top: 20px;
     }
 
+    .font{
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
   </style>
 </head>
 <body>
   <main class="container grid" id="message">
     <section class="card note">
       <h3>Dear <span id="dear-name">Arunima </span>💖</h3>
-      <p>
+      <p class="font">
         "Happy Birthday, Arunima! 🎂✨ On your special day, I wish you endless happiness, boundless success, and moments filled with love and laughter. May your life always shine as brightly as your smile and may every dream you hold close to your heart come true. Celebrate big, because you truly deserve it! 🎉💖"  
       </p>
       <p>
-        <b>Remember: </b>You are magic, you are resilient, and you are loved—today and always. Keep shining bright and smiling that smile that makes everything better.
+        <b>Remember: </b><p class="font">You are magic, you are resilient, and you are loved—today and always. Keep shining bright and smiling that smile that makes everything better.
+</p>
       </p>
       <p style="margin-top:1rem; font-weight:600">— <span id="from">From Abhishek</span></p>
 
       <div class="wishes">
-        <div class="wish"><h4>🎉 Wish #1</h4><p>May your days be full of belly laughs and good chaos.</p></div>
-        <div class="wish"><h4>🌟 Wish #2</h4><p>May your hard work bloom into easy wins and big joy.</p></div>
-        <div class="wish"><h4>💌 Wish #3</h4><p>May you always find home in little moments and kind people.</p></div>
-        <div class="wish"><h4>🧁 Wish #4</h4><p>May you treat yourself like your favorite person—because you are.</p></div>
+        <div class="wish"><h4>🎉 Wish #1</h4><p class="font">May your days be full of belly laughs and good chaos.</p></div>
+        <div class="wish"><h4>🌟 Wish #2</h4><p class="font">May your hard work bloom into easy wins and big joy.</p></div>
+        <div class="wish"><h4>💌 Wish #3</h4><p class="font">May you always find home in little moments and kind people.</p></div>
+        <div class="wish"><h4>🧁 Wish #4</h4><p class="font">May you treat yourself like your favorite person—because you are.</p></div>
       </div>
     </section>
   </main>
