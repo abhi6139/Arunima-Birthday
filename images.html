@@ -18,25 +18,25 @@
         margin-bottom: 20px;
     }
     .gallery {
-        column-count: 6;      /* 5 columns desktop */
+        column-count: 6;      
         column-gap: 20px;
     }
 
     .gallery img {
-        width: 100%;                /* take full column width */
+        width: 100%;                
         margin-bottom: 20px;
         border-radius: 10px;
         box-shadow: 0 0 15px hotpink;
         transition: transform 0.3s;
-        display: inline-block;       /* important for masonry */
-        break-inside: avoid;         /* prevents image breaking between columns */
+        display: inline-block;       
+        break-inside: avoid;         
+        cursor: pointer; /* pointer on hover */
     }
 
     .gallery img:hover {
         transform: scale(1.05);
     }
 
-    
     a {
         position: absolute;
         top: 20px;
@@ -49,12 +49,42 @@
         font-weight: 600;
         box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         transition: 0.3s;
-        font-size: 16px; /* normal size */
+        font-size: 16px;
     }
     
-    /* Hover effect */
     a:hover {
         background: deeppink;
+    }
+
+    /* Lightbox */
+    .lightbox {
+        display: none; /* hidden by default */
+        position: fixed;
+        z-index: 9999;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: rgba(0,0,0,0.8);
+        justify-content: center;
+        align-items: center;
+    }
+    .lightbox img {
+        max-width: 90%;
+        max-height: 80%;
+        border-radius: 10px;
+        box-shadow: 0 0 20px white;
+    }
+    .close-btn {
+        position: absolute;
+        top: 20px;
+        right: 40px;
+        font-size: 40px;
+        color: white;
+        cursor: pointer;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+    .close-btn:hover {
+        color: hotpink;
     }
 
     /* Responsive */
@@ -64,11 +94,10 @@
     @media (max-width: 600px) {
         .gallery { column-count: 3; }
         a {
-        padding: 5px 10px;   /* half padding */
-        font-size: 10px;     /* smaller text */
+            padding: 5px 10px;
+            font-size: 10px;
         }
     }
-
 </style>
 </head>
 <body>
@@ -89,16 +118,47 @@
         <img src="images/13.jpg" alt="Memory 13">
         <img src="images/14.jpg" alt="Memory 14">
         <img src="images/15.jpg" alt="Memory 15">
-        <img src="images/16.jpg" alt="Memory 15">
-        <img src="images/17.jpg" alt="Memory 15">
-        <img src="images/18.jpg" alt="Memory 15">
-        <img src="images/19.jpg" alt="Memory 15">
-        <img src="images/20.jpg" alt="Memory 15">
+        <img src="images/16.jpg" alt="Memory 16">
+        <img src="images/17.jpg" alt="Memory 17">
+        <img src="images/18.jpg" alt="Memory 18">
+        <img src="images/19.jpg" alt="Memory 19">
+        <img src="images/20.jpg" alt="Memory 20">
     </div>
     <a href="birthday.html">Home</a>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <span class="close-btn" id="closeBtn">&times;</span>
+        <img id="lightboxImg" src="">
+    </div>
 
     <audio autoplay loop>
         <source src="music.mp3" type="audio/mpeg">
     </audio>
+
+<script>
+    const images = document.querySelectorAll('.gallery img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const closeBtn = document.getElementById('closeBtn');
+
+    images.forEach(img => {
+        img.addEventListener('click', () => {
+            lightbox.style.display = 'flex';
+            lightboxImg.src = img.src;
+        });
+    });
+
+    closeBtn.addEventListener('click', () => {
+        lightbox.style.display = 'none';
+    });
+
+    // Close when clicking outside image
+    lightbox.addEventListener('click', (e) => {
+        if (e.target !== lightboxImg) {
+            lightbox.style.display = 'none';
+        }
+    });
+</script>
 </body>
 </html>
