@@ -1,100 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Happy Birthday 🎉</title>
-  <meta name="description" content="A cute, responsive static birthday wishes page built with only HTML & CSS." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="style.css">
-  
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arunima's Birthday 🎂</title>
+<link rel="icon" type="image/png" href="images/favicon.png">
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: linear-gradient(135deg, white, pink);
+        font-family: 'Comic Sans MS', cursive, sans-serif;
+        overflow: hidden;
+    }
+    h1 {
+        color: hotpink;
+        margin-bottom: 20px;
+    }
+    input {
+        padding: 10px;
+        border-radius: 10px;
+        border: 2px solid pink;
+        text-align: center;
+        font-size: 16px;
+    }
+    button {
+        margin-top: 15px;
+        padding: 10px 20px;
+        border: none;
+        background: hotpink;
+        color: white;
+        font-size: 16px;
+        font-weight: 600;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    button:hover {
+        background: deeppink;
+    }
+</style>
 </head>
 <body>
-  <!-- Password Screen -->
-  <div id="password-overlay">
-    <div id="password-box">
-      <h2>🔒 Enter Password</h2>
-      <input type="password" id="password-input" placeholder="Enter password" />
-      <button id="password-btn">Unlock</button>
-      <p id="error-msg">❌ Wrong password, try again!</p>
-    </div>
-  </div>
+    <h1>🔐 Enter Password</h1>
+    <input type="password" id="password" placeholder="Enter password">
+    <button onclick="checkPassword()">Unlock</button>
 
-  <!-- Your Website -->
-  <div class="bg" style="display:none" id="main-content">
-    <header class="hero">
-      <div class="container">
-        <h1 class="title">To <span id="big-name"></span></h1>
-        <p class="subtitle"><span class="type">“Happy Birthday 🎂, Arunima!”</span></p>
-        <a href="#message" class="btn">Open your birthday note ✨</a>
-      </div>
-      <div class="balloons">
-        <div class="balloon" style="left:10%; background:var(--accent-1); --dur:18s"></div>
-        <div class="balloon" style="left:30%; background:var(--accent-2); --dur:22s"></div>
-        <div class="balloon" style="left:50%; background:var(--accent-3); --dur:20s"></div>
-        <div class="balloon" style="left:70%; background:#9ad1a5; --dur:24s"></div>
-        <div class="balloon" style="left:85%; background:#c08bff; --dur:26s"></div>
-      </div>
-    </header>
-
-    <main class="container grid" id="message">
-      <section class="card note">
-        <h3>Dear <span id="dear-name"></span> 💖</h3>
-        <p>
-        “Happy Birthday, Arunima!
-        </p>
-        
-        <p style="margin-top:1rem; font-weight:600">— <span id="from"></span></p>
-
-        <div class="wishes">
-          <div class="wish"><h4>🎉 Wish #1</h4><p>Happy Birthday</p></div>
-          <div class="wish"><h4>🌟 Wish #2</h4><p>Happy Birthday</p></div>
-          <div class="wish"><h4>💌 Wish #3</h4><p>Happy Birthday.</p></div>
-          <div class="wish"><h4>🧁 Wish #4</h4><p>Happy Birthday</p></div>
-        </div>
-      </section>
-
-      <aside class="card">
-        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:10px">
-          <h3 style="margin:0">Some Images 📸</h3>
-        </div>
-        <div class="collage">
-          <div class="ph big"><img src="12.jpg"/></div>
-          <div class="ph big"><img src="23.jpg"/></div>
-          <div class="ph big"><img src="34.jpg"/></div>
-          <div class="ph"><img src="45.jpg"/></div>
-          <div class="ph"><img src="56.jpg"/></div>
-          <div class="ph"><img src="67.jpg"/></div>
-          <div class="ph big"><img src="78.jpg"/></div>
-          <div class="ph wide"><img src="89.jpg"/></div>
-          <div class="ph"><img src="90.jpg"/></div>
-        </div>
-      </aside>
-    </main>
-
-    <style>
-      #recipient::before, #big-name::before, #dear-name::before{content: var(--bd-name)}
-      #from::before{content: var(--from-name)}
-    </style>
-  </div>
-
-  <footer style="width: auto; height: 50px;"></footer>
-
-  <!-- JavaScript -->
-  <script>
-    document.getElementById("password-btn").addEventListener("click", function() {
-      const input = document.getElementById("password-input").value;
-      const correctPassword = "Arunima12"; // Change password here
-
-      if(input === correctPassword){
-        document.getElementById("password-overlay").style.display = "none";
-        document.getElementById("main-content").style.display = "block";
-      } else {
-        document.getElementById("error-msg").style.display = "block";
-      }
-    });
-  </script>
+<script>
+function checkPassword() {
+    const pass = document.getElementById("password").value;
+    if (pass === "Arunima1809") {
+        window.location.href = "birthday.html";
+    } else {
+        alert("❌ Wrong password! Try again.");
+    }
+}
+</script>
 </body>
 </html>
-

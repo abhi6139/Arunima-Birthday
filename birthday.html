@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday 🎂</title>
+<link rel="icon" type="image/png" href="images/favicon.png">
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        background: linear-gradient(135deg, white, pink);
+        font-family: 'Comic Sans MS', cursive, sans-serif;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    h2 {
+        font-size: 30px;
+        color: deeppink;
+        text-shadow: 2px 2px white;
+        margin-top: -10px;
+    }
+    @keyframes float {
+        from {transform: translateY(0);}
+        to {transform: translateY(-20px);}
+    }
+    img {
+        width: 200px;
+        animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+        0%, 100% { transform: translateY(0);}
+        50% { transform: translateY(-30px);}
+    }
+    .buttons {
+        margin-top: 30px;
+        display: flex;
+        gap: 20px;
+    }
+    .buttons a {
+        text-decoration: none;
+        padding: 12px 20px;
+        background: hotpink;
+        color: white;
+        border-radius: 15px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+    .buttons a:hover {
+        background: deeppink;
+    }
+    .emoji {
+        position: absolute;
+        font-size: 24px;
+        animation: fly 10s linear infinite;
+    }
+    @keyframes fly {
+        from { transform: translateY(100vh);}
+        to { transform: translateY(-120vh);}
+    }
+    @media (max-width: 600px) {
+        body {
+            padding: 15px;
+        }
+        h2 {
+            font-size: 24px; /* smaller text on mobile */
+        }
+        img {
+            width: 150px; /* shrink cake */
+        }
+        .buttons{
+            font-size: 14px;
+        }
+    }
+    .title{
+      font-family:'Pacifico', cursive; font-size: clamp(42px, 7vw, 82px);
+      margin:0;
+      background: linear-gradient(135deg, #ff7ab6, #7aafff);
+      -webkit-background-clip: text; background-clip:text; color: transparent;
+    }
+
+</style>
+</head>
+<body>
+    <h1 class="title">To Arunima</h1><br>
+    <h2>🎉 Happy Birthday Arunima 🎂</h2><br>
+    <img src="images/cake.png" alt="Birthday Cake">
+
+    <div class="buttons">
+        <a href="wishes.html">💖 Wishes</a>
+        <a href="letter.html">📜 Letter</a>
+        <a href="images.html">📸 Images</a>
+    </div>
+
+    <audio autoplay loop>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
+<script>
+const emojis = ["🎂","🎈","💖","🎉","💕"];
+for (let i=0;i<20;i++){
+    let span = document.createElement("span");
+    span.innerHTML = emojis[Math.floor(Math.random()*emojis.length)];
+    span.classList.add("emoji");
+    span.style.left = Math.random()*100 + "vw";
+    span.style.animationDuration = (5+Math.random()*5)+"s";
+    document.body.appendChild(span);
+}
+</script>
+</body>
+</html>
