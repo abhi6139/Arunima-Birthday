@@ -28,7 +28,7 @@
         to {transform: translateY(-20px);}
     }
     img {
-        width: 200px;
+        width: 300px;
         animation: bounce 2s infinite;
     }
     @keyframes bounce {
@@ -62,24 +62,34 @@
         to { transform: translateY(-120vh);}
     }
     @media (max-width: 600px) {
-        body {
-            display: flex;
-            justify-content: start;
-            align-items: center;
-            flex-direction: column; 
-            margin-top: 150px;
-            padding: 15px;
-        }
-        h2 {
-            font-size: 24px; /* smaller text on mobile */
-        }
-        img {
-            width: 150px; /* shrink cake */
-        }
-        .buttons{
-            font-size: 14px;
-        }
+    body {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        flex-direction: column; 
+        margin-top: 150px;
+        padding: 15px;
     }
+    h2 {
+        font-size: 24px; /* smaller text on mobile */
+    }
+    img {
+        width: 200px; /* shrink cake */
+    }
+    .buttons {
+        display: grid;                  /* turn into grid */
+        grid-template-columns: 1fr 1fr; /* 2 buttons per row */
+        gap: 12px;
+        width: 100%;                    /* full width */
+        max-width: 300px;               /* keeps it neat */
+        font-size: 14px;
+        margin-top: 20px;
+    }
+    .buttons a {
+        text-align: center;
+    }
+}
+
     .title{
       font-family:'Pacifico', cursive; font-size: clamp(42px, 7vw, 82px);
       margin:0;
@@ -98,6 +108,7 @@
         <a href="wishes.html">💖 Wishes</a>
         <a href="letter.html">📜 Letter</a>
         <a href="images.html">📸 Images</a>
+        <a href="video.html">🎥 Video</a>
     </div>
 
     <audio autoplay loop>
