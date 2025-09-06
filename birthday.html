@@ -16,14 +16,14 @@
     background-size: cover;
     background-attachment: fixed;
     overflow-x: hidden; /* 🚀 prevents side color issue */
-}
-body {
-    overflow-y: hidden; /* keep emojis inside vertically */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
+    }
+    body {
+        overflow-y: hidden; /* keep emojis inside vertically */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
 
 
     h2 {
@@ -70,6 +70,14 @@ body {
         from { transform: translateY(100vh);}
         to { transform: translateY(-120vh);}
     }
+
+    .title{
+      font-family:'Pacifico', cursive; font-size: clamp(55px, 7vw, 82px);
+      margin:20px 0 0 0;
+      background: linear-gradient(135deg, #ff7ab6, #7aafff);
+      -webkit-background-clip: text; background-clip:text; color: transparent;
+    }
+
     @media (max-width: 600px) {
     body {
         display: flex;
@@ -83,28 +91,27 @@ body {
         font-size: 24px; /* smaller text on mobile */
     }
     img {
-        width: 200px; /* shrink cake */
+        width: 250px; /* shrink cake */
     }
     .buttons {
         display: grid;                  /* turn into grid */
         grid-template-columns: 1fr 1fr; /* 2 buttons per row */
-        gap: 12px;
+        gap: 15px;
         width: 100%;                    /* full width */
         max-width: 300px;               /* keeps it neat */
-        font-size: 16px;
-        margin-top: 20px;
+        font-size: 19px;
+        margin-top: 10px;
     }
     .buttons a {
         text-align: center;
     }
-}
-
     .title{
-      font-family:'Pacifico', cursive; font-size: clamp(42px, 7vw, 82px);
+      font-family:'Pacifico', cursive; font-size: clamp(55px, 7vw, 82px);
       margin:0;
       background: linear-gradient(135deg, #ff7ab6, #7aafff);
       -webkit-background-clip: text; background-clip:text; color: transparent;
     }
+}
 
 </style>
 </head>
@@ -113,6 +120,7 @@ body {
     <h2>🎉 Happy Birthday Arunima 🎂</h2><br>
     <img src="images/cake.png" alt="Birthday Cake">
 
+    <br><br>
     <div class="buttons">
         <a href="wishes.html">💖 Wishes</a>
         <a href="letter.html">📜 Letter</a>
