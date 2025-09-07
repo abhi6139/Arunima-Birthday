@@ -37,6 +37,15 @@
       width: 100%;
       border-radius: 10px;
     }
+    .video-bd{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: auto;
+      height:400px;
+      width: 600px;
+    }
     .back-btn {
       position: absolute;
       top: 20px;
@@ -58,6 +67,10 @@
         padding: 6px 12px;
         font-size: 12px;
       }
+      .video-bd{
+      height:225px;
+      width: 340px;
+    }
     }
   </style>
 </head>
@@ -65,54 +78,55 @@
   <a href="birthday.html" class="back-btn">Home</a>
   <h1>🎥 Birthday Wishes Videos 💖</h1>
 
+  <div class="video-bd">
+    <video controls>
+      <source src="videos/video_bd.mp4" type="video/mp4">
+      Your browser does not support video.
+    </video>
+  </div>
+
   <div class="video-grid">
     <!-- Example videos (replace src with your actual video files or links) -->
     <div class="video-card">
       <video controls>
-        <source src="videos/Aditya.mp4" type="video/mp4">
+        <source src="videos/video1.mp4" type="video/mp4">
         Your browser does not support video.
       </video>
-      <p>Wish from your Love 💕</p>
     </div>
 
     <div class="video-card">
       <video controls>
-        <source src="videos/Ayushi.mp4" type="video/mp4">
+        <source src="videos/video2.mp4" type="video/mp4">
         Your browser does not support video.
       </video>
-      <p>Wish from Ayushi 🎂</p>
     </div>
 
     <div class="video-card">
       <video controls>
-        <source src="videos/Abhishek.mp4" type="video/mp4">
+        <source src="videos/video3.mp4" type="video/mp4">
         Your browser does not support video.
       </video>
-      <p>Wish from Abhishek 🎂</p>
     </div>
     
     <div class="video-card">
       <video controls>
-        <source src="videos/Ankush.mp4" type="video/mp4">
+        <source src="videos/video4.mp4" type="video/mp4">
         Your browser does not support video.
       </video>
-      <p>Wish from Ankush 🎂</p>
     </div>
 
     <div class="video-card">
       <video controls>
-        <source src="videos/Dipendra.mp4" type="video/mp4">
+        <source src="videos/video5.mp4" type="video/mp4">
         Your browser does not support video.
       </video>
-      <p>Wish from Dipendra 🎂</p>
     </div>
     
     <div class="video-card">
       <video controls>
-        <source src="videos/Arman.mp4" type="video/mp4">
+        <source src="videos/video6.mp4" type="video/mp4">
         Your browser does not support video.
       </video>
-      <p>Wish from Arman 🎂</p>
     </div>
 
   </div>
