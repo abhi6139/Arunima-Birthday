@@ -165,5 +165,17 @@ for (let i=0;i<20;i++){
     document.body.appendChild(span);
 }
 </script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script>
+  // 🎉 Confetti explosion on page load
+  setTimeout(() => {
+    confetti({
+      particleCount: 200,
+      spread: 100,
+      origin: { y: 0.6 }
+    });
+  }, 800);
+</script>
+
 </body>
 </html>
