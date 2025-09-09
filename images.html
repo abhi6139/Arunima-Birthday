@@ -21,22 +21,31 @@
         column-count: 6;      
         column-gap: 20px;
     }
-
-    .gallery img {
-        width: 100%;                
+    .img-container {
+        position: relative;
+        display: inline-block;
+        width: 100%;
         margin-bottom: 20px;
+        break-inside: avoid;
+    }
+    .img-container img {
+        width: 100%;                
         border-radius: 10px;
         box-shadow: 0 0 15px hotpink;
         transition: transform 0.3s;
-        display: inline-block;       
-        break-inside: avoid;         
-        cursor: pointer; /* pointer on hover */
+        user-select: none;     /* disable text/image selection */
+        pointer-events: none;  /* block direct right-click */
+        display: block;
     }
-
-    .gallery img:hover {
+    .img-container:hover img {
         transform: scale(1.05);
     }
-
+    .overlay {
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: transparent;
+        cursor: pointer;
+    }
     a {
         position: absolute;
         top: 20px;
@@ -51,14 +60,13 @@
         transition: 0.3s;
         font-size: 16px;
     }
-    
     a:hover {
         background: deeppink;
     }
 
     /* Lightbox */
     .lightbox {
-        display: none; /* hidden by default */
+        display: none;
         position: fixed;
         z-index: 9999;
         top: 0; left: 0;
@@ -72,6 +80,8 @@
         max-height: 80%;
         border-radius: 10px;
         box-shadow: 0 0 20px white;
+        user-select: none;
+        pointer-events: none;
     }
     .close-btn {
         position: absolute;
@@ -92,7 +102,7 @@
         .gallery { column-count: 4; }
     }
     @media (max-width: 600px) {
-        .gallery { column-count: 3; }
+        .gallery { column-count: 2; }
         a {
             padding: 8px 13px;
             font-size: 12px;
@@ -103,27 +113,29 @@
 <body>
     <h1>📸 Some of your Images 💖</h1>
     <div class="gallery">
-        <img src="images/1.jpg" alt="Memory 1">
-        <img src="images/2.jpg" alt="Memory 2">
-        <img src="images/3.jpg" alt="Memory 3">
-        <img src="images/4.jpg" alt="Memory 4">
-        <img src="images/5.jpg" alt="Memory 5">
-        <img src="images/6.jpg" alt="Memory 6">
-        <img src="images/7.jpg" alt="Memory 7">
-        <img src="images/8.jpg" alt="Memory 8">
-        <img src="images/9.jpg" alt="Memory 9">
-        <img src="images/10.jpg" alt="Memory 10">
-        <img src="images/11.jpg" alt="Memory 11">
-        <img src="images/12.jpg" alt="Memory 12">
-        <img src="images/13.jpg" alt="Memory 13">
-        <img src="images/14.jpg" alt="Memory 14">
-        <img src="images/15.jpg" alt="Memory 15">
-        <img src="images/16.jpg" alt="Memory 16">
-        <img src="images/17.jpg" alt="Memory 17">
-        <img src="images/18.jpg" alt="Memory 18">
-        <img src="images/19.jpg" alt="Memory 19">
-        <img src="images/20.jpg" alt="Memory 20">
+        <!-- Repeat for all images -->
+        <div class="img-container"><img src="images/1.jpg" alt="Memory 1"><div class="overlay" onclick="openLightbox('images/1.jpg')"></div></div>
+        <div class="img-container"><img src="images/2.jpg" alt="Memory 2"><div class="overlay" onclick="openLightbox('images/2.jpg')"></div></div>
+        <div class="img-container"><img src="images/3.jpg" alt="Memory 3"><div class="overlay" onclick="openLightbox('images/3.jpg')"></div></div>
+        <div class="img-container"><img src="images/4.jpg" alt="Memory 4"><div class="overlay" onclick="openLightbox('images/4.jpg')"></div></div>
+        <div class="img-container"><img src="images/5.jpg" alt="Memory 5"><div class="overlay" onclick="openLightbox('images/5.jpg')"></div></div>
+        <div class="img-container"><img src="images/6.jpg" alt="Memory 6"><div class="overlay" onclick="openLightbox('images/6.jpg')"></div></div>
+        <div class="img-container"><img src="images/7.jpg" alt="Memory 7"><div class="overlay" onclick="openLightbox('images/7.jpg')"></div></div>
+        <div class="img-container"><img src="images/8.jpg" alt="Memory 8"><div class="overlay" onclick="openLightbox('images/8.jpg')"></div></div>
+        <div class="img-container"><img src="images/9.jpg" alt="Memory 9"><div class="overlay" onclick="openLightbox('images/9.jpg')"></div></div>
+        <div class="img-container"><img src="images/10.jpg" alt="Memory 10"><div class="overlay" onclick="openLightbox('images/10.jpg')"></div></div>
+        <div class="img-container"><img src="images/11.jpg" alt="Memory 11"><div class="overlay" onclick="openLightbox('images/11.jpg')"></div></div>
+        <div class="img-container"><img src="images/12.jpg" alt="Memory 12"><div class="overlay" onclick="openLightbox('images/12.jpg')"></div></div>
+        <div class="img-container"><img src="images/13.jpg" alt="Memory 13"><div class="overlay" onclick="openLightbox('images/13.jpg')"></div></div>
+        <div class="img-container"><img src="images/14.jpg" alt="Memory 14"><div class="overlay" onclick="openLightbox('images/14.jpg')"></div></div>
+        <div class="img-container"><img src="images/15.jpg" alt="Memory 15"><div class="overlay" onclick="openLightbox('images/15.jpg')"></div></div>
+        <div class="img-container"><img src="images/16.jpg" alt="Memory 16"><div class="overlay" onclick="openLightbox('images/16.jpg')"></div></div>
+        <div class="img-container"><img src="images/17.jpg" alt="Memory 17"><div class="overlay" onclick="openLightbox('images/17.jpg')"></div></div>
+        <div class="img-container"><img src="images/18.jpg" alt="Memory 18"><div class="overlay" onclick="openLightbox('images/18.jpg')"></div></div>
+        <div class="img-container"><img src="images/19.jpg" alt="Memory 19"><div class="overlay" onclick="openLightbox('images/19.jpg')"></div></div>
+        <div class="img-container"><img src="images/20.jpg" alt="Memory 20"><div class="overlay" onclick="openLightbox('images/20.jpg')"></div></div>
     </div>
+
     <a href="birthday.html">Home</a>
 
     <!-- Lightbox -->
@@ -137,28 +149,24 @@
     </audio>
 
 <script>
-    const images = document.querySelectorAll('.gallery img');
+function openLightbox(src) {
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightboxImg');
-    const closeBtn = document.getElementById('closeBtn');
+    lightbox.style.display = 'flex';
+    lightboxImg.src = src;
+}
 
-    images.forEach(img => {
-        img.addEventListener('click', () => {
-            lightbox.style.display = 'flex';
-            lightboxImg.src = img.src;
-        });
-    });
+// Close button
+document.getElementById('closeBtn').addEventListener('click', () => {
+    document.getElementById('lightbox').style.display = 'none';
+});
 
-    closeBtn.addEventListener('click', () => {
-        lightbox.style.display = 'none';
-    });
-
-    // Close when clicking outside image
-    lightbox.addEventListener('click', (e) => {
-        if (e.target !== lightboxImg) {
-            lightbox.style.display = 'none';
-        }
-    });
+// Close when clicking outside image
+document.getElementById('lightbox').addEventListener('click', (e) => {
+    if (e.target.id === 'lightbox') {
+        e.target.style.display = 'none';
+    }
+});
 </script>
 </body>
 </html>
