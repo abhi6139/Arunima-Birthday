@@ -130,5 +130,27 @@
     </div>
 
   </div>
+
+  <script>
+    // 🚫 Disable right-click
+    document.addEventListener('contextmenu', (e) => {
+      e.preventDefault();
+      alert("Saving/Downloading is disabled 💖");
+    });
+
+    // 🚫 Disable common save/inspect shortcuts
+    document.addEventListener('keydown', function(e) {
+      if (
+        (e.ctrlKey && e.key.toLowerCase() === 's') ||   // Ctrl+S
+        (e.ctrlKey && e.key.toLowerCase() === 'u') ||   // Ctrl+U
+        (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'i') || 
+        (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'j') || 
+        (e.ctrlKey && e.key.toLowerCase() === 'c')      
+      ) {
+        e.preventDefault();
+        alert("This action is disabled 💖");
+      }
+    });
+  </script>
 </body>
 </html>
