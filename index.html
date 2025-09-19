@@ -5,8 +5,59 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Arunima's Birthday 🎂</title>
 <link rel="icon" type="image/png" href="images/favicon.png">
-<br>
-<br>
-    <b>The Website is currently under update and is available to view on 20th September 2025.<br><br> Thank You</b>
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: linear-gradient(135deg, white, pink);
+        font-family: 'Comic Sans MS', cursive, sans-serif;
+        overflow: hidden;
+    }
+    h1 {
+        color: hotpink;
+        margin-bottom: 20px;
+    }
+    input {
+        padding: 10px;
+        border-radius: 10px;
+        border: 2px solid pink;
+        text-align: center;
+        font-size: 16px;
+    }
+    button {
+        margin-top: 15px;
+        padding: 10px 20px;
+        border: none;
+        background: hotpink;
+        color: white;
+        font-size: 16px;
+        font-weight: 600;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    button:hover {
+        background: deeppink;
+    }
+</style>
+</head>
+<body>
+    <h1>🔐 Enter Password</h1>
+    <input type="password" id="password" placeholder="Enter password">
+    <button onclick="checkPassword()">Unlock</button>
+
+<script>
+function checkPassword() {
+    const pass = document.getElementById("password").value;
+    if (pass === "Arunima1809") {
+        window.location.href = "birthday.html";
+    } else {
+        alert("❌ Wrong password! Try again.");
+    }
+}
+</script>
 </body>
 </html>

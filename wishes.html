@@ -1,12 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Arunima's Birthday 🎂</title>
-<link rel="icon" type="image/png" href="images/favicon.png">
-<br>
-<br>
-    <b>The Website is currently under update and is available to view on 20th September 2025.<br><br> Thank You</b>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Wishes🎉</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <meta name="description" content="A cute, responsive static birthday wishes page built with only HTML & CSS." />
+  <style>
+    /* Body */
+body {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background: linear-gradient(135deg, white, pink);
+  color: #333;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 15px;
+}
+
+/* Container centers content */
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Main card centered */
+.card.note {
+  font-size: 16px;
+  background: #fff;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 700px;   /* 🎯 Set width */
+  text-align: start; /* Center text */
+}
+
+/* Wishes grid centered inside */
+.wishes {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.wish {
+  background: linear-gradient(135deg, #ffe4e6, #fcd5ce);
+  border-radius: 15px;
+  padding: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  transition: transform 0.2s;
+  width: 40%;          /* 🎯 Narrower width */
+  max-width: 500px;    /* 🎯 Keeps them centered and neat */
+  text-align: left;
+}
+
+.wish:hover {
+  transform: translateY(-4px);
+}
+
+/* Back button */
+.back-btn {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  padding: 10px 20px;
+  background: hotpink;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  background: deeppink;
+}
+@media (max-width: 600px) {
+        .back-btn {
+          padding: 8px 13px;   /* half padding */
+          font-size: 12px;     /* smaller text */
+        }
+        .wishes{
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+        .wish{
+          width: 100%;
+        }
+        .container{
+          margin-top: 20px;
+          font-size: 20px ;
+        }
+        .font{
+          font-size: 20px ;
+        }
+        }
+        
+      
+
+  </style>
+</head>
+<body>
+  <main class="container grid font" id="message">
+    <section class="card note">
+      <h3 class="font">Dear <span id="dear-name">Arunima </span>💖</h3>
+      <p class="font">
+        "Happy Birthday, Arunima! 🎂✨ On your special day, I wish you endless happiness, boundless success, and moments filled with love and laughter. May your life always shine as brightly as your smile, and may every dream you hold close to your heart come true. Celebrate big, because you truly deserve it! 🎉💖"  
+      </p>
+      <p  class="font">
+        <b>Remember: </b>You are magic, you are resilient, and you are loved—today and always. Keep shining bright and smiling that smile that makes everything better.
+      </p>
+      <p style="margin-top:1rem; font-weight:600">— <span id="from">From Abhishek</span></p>
+
+      <div class="wishes">
+        <div class="wish"><h4>🎉 Wish #1</h4><p class="font">May your days be full of belly laughs and good chaos.</p></div>
+        <div class="wish"><h4>🌟 Wish #2</h4><p class="font">May your hard work bloom into easy wins and big joy.</p></div>
+        <div class="wish"><h4>💌 Wish #3</h4><p class="font">May you always find home in little moments and kind people.</p></div>
+        <div class="wish"><h4>🧁 Wish #4</h4><p class="font">May you treat yourself like your favorite person—because you are.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <a href="birthday.html" class="back-btn">Home</a>
 </body>
 </html>
