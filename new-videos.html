@@ -16,19 +16,25 @@
     h1 {
       margin-bottom: 20px;
     }
+
+    /* 🎥 Video Grid */
     .video-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(2, 1fr); /* 2 per row on desktop */
       gap: 20px;
       max-width: 1000px;
       margin: auto;
     }
-    .video-card, .video-bd{
+
+    .video-card {
       background: #fff;
       border-radius: 15px;
       padding: 10px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.2);
       transition: transform 0.3s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
     .video-card:hover {
       transform: scale(1.05);
@@ -37,15 +43,8 @@
       width: 100%;
       border-radius: 10px;
     }
-    .video-bd{
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      max-width: 1000px;
-      margin: auto;
-      height:400px;
-      width: 600px;
-    }
+
+    /* Back button */
     .back-btn {
       position: absolute;
       top: 20px;
@@ -62,73 +61,53 @@
     .back-btn:hover {
       background: deeppink;
     }
-    @media (max-width: 600px) {
+
+    /* 📱 Mobile adjustments */
+    @media (max-width: 768px) {
+      .video-grid {
+        grid-template-columns: 1fr; /* stack vertically */
+      }
       .back-btn {
         padding: 6px 12px;
         font-size: 12px;
       }
-      .video-bd{
-      height:225px;
-      width: 340px;
-    }
     }
   </style>
 </head>
 <body>
   <a href="birthday.html" class="back-btn">Home</a>
-  <h1>🎥 Some of your Videos 💖</h1>
+  <h1>🎥 Your Birthday Videos 💖</h1>
 
-  <div class="video-bd">
-    <video controls controlsList="nodownload">
-      <source src="videos/video_bd.mp4" type="video/mp4">
-      Your browser does not support video.
-    </video>
-  </div>
-<br><br>
+  <br><br>
   <div class="video-grid">
     <!-- Example videos (replace src with your actual video files or links) -->
     <div class="video-card">
       <video controls controlsList="nodownload">
-        <source src="videos/video1.mp4" type="video/mp4">
+        <source src="videos/video101.mp4" type="video/mp4">
         Your browser does not support video.
       </video>
     </div>
 
     <div class="video-card">
       <video controls controlsList="nodownload">
-        <source src="videos/video2.mp4" type="video/mp4">
+        <source src="videos/video102.mp4" type="video/mp4">
         Your browser does not support video.
       </video>
     </div>
 
     <div class="video-card">
       <video controls controlsList="nodownload">
-        <source src="videos/video3.mp4" type="video/mp4">
+        <source src="videos/video103.mp4" type="video/mp4">
         Your browser does not support video.
       </video>
     </div>
     
     <div class="video-card">
       <video controls controlsList="nodownload">
-        <source src="videos/video4.mp4" type="video/mp4">
+        <source src="videos/video104.mp4" type="video/mp4">
         Your browser does not support video.
       </video>
     </div>
-
-    <div class="video-card">
-      <video controls controlsList="nodownload">
-        <source src="videos/video5.mp4" type="video/mp4">
-        Your browser does not support video.
-      </video>
-    </div>
-    
-    <div class="video-card">
-      <video controls controlsList="nodownload">
-        <source src="videos/video6.mp4" type="video/mp4">
-        Your browser does not support video.
-      </video>
-    </div>
-
   </div>
 
   <script>
